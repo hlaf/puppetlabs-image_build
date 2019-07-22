@@ -269,11 +269,11 @@ module PuppetX
           raise InvalidContextError, 'puppet docker currently only supports Ubuntu, Debian, Alpine and Centos base images'
         end
         @context[:environment] = {
-          puppet_agent_version: @context[:puppet_agent_version],
-          r10k_version: @context[:r10k_version],
-          codename: codename,
-          puppet_version: puppet_version,
-          facter_version: facter_version
+          :puppet_agent_version => @context[:puppet_agent_version],
+          :r10k_version => @context[:r10k_version],
+          :codename => codename,
+          :puppet_version => puppet_version,
+          :facter_version => facter_version
         }.reject { |_name, value| value.nil? }
         unless @context[:env].nil?
           @context[:env].map { |pair| pair.split('=') }.each do |name, value|
