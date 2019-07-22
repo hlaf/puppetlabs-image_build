@@ -198,6 +198,8 @@ module PuppetX
         @context[:r10k_path] = case @context[:os]
                                when 'alpine'
                                  ['/usr/bin/puppet', 'gem', 'r10k']
+                               when 'centos'
+                                 ['/usr/bin/puppet']
                                else
                                  ['/opt/puppetlabs/bin/puppet', '/opt/puppetlabs/puppet/bin/gem', '/opt/puppetlabs/puppet/bin/r10k']
                                end
