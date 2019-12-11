@@ -44,6 +44,10 @@ module PuppetX
         default_to { 'production' }
       end
 
+      option '--puppet-extra-settings STRING' do
+        summary 'Additional Puppet command-line settings'
+      end
+
       option '--expose STRING' do
         summary 'A list of ports to be exposed by the resulting image'
       end
